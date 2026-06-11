@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Aliyuda - Pricing & Commercial Analytics</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#0a0a0f;color:#e8e8f0;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid #2a2a3a;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center}
+.nav-name{font-weight:800;font-size:1.1rem;letter-spacing:-0.02em}
+.nav-name span{color:#00d4aa}
+.nav-links{display:flex;gap:1rem;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:#8a8a9e;text-decoration:none;font-size:0.8rem;font-weight:600;white-space:nowrap;padding:0.25rem 0;transition:color 0.2s}
+.nav-links a:hover{color:#00d4aa}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:6rem 1.25rem 3rem;max-width:1200px;margin:0 auto}
+.hero-label{display:inline-flex;align-items:center;gap:0.5rem;color:#00d4aa;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem}
+.hero-label::before{content:'';width:6px;height:6px;background:#00d4aa;border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-size:2.4rem;font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.25rem}
+.hero h1 .highlight{color:#00d4aa}
+.hero-subtitle{font-size:1.05rem;color:#8a8a9e;margin-bottom:2rem;line-height:1.7}
+.hero-cta{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:3rem}
+.btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.5rem;border-radius:10px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;width:100%;min-height:48px}
+.btn-primary{background:#00d4aa;color:#0a0a0f}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,0.25)}
+.btn-ghost{background:transparent;color:#e8e8f0;border:1.5px solid #3a3a4e}
+.btn-ghost:hover{background:#1a1a25;border-color:#8a8a9e}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.metric-card{background:#12121a;border:1px solid #2a2a3a;border-radius:14px;padding:1.25rem;transition:all 0.3s;position:relative;overflow:hidden}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00d4aa,transparent);opacity:0;transition:opacity 0.3s}
+.metric-card:hover{transform:translateY(-4px);border-color:#3a3a4e;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.metric-card:hover::before{opacity:1}
+.metric-value{font-size:1.6rem;font-weight:900;color:#00d4aa;line-height:1;margin-bottom:0.4rem}
+.metric-label{font-size:0.7rem;color:#8a8a9e;font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
+.metric-context{font-size:0.7rem;color:#5a5a6e;margin-top:0.4rem;line-height:1.4}
+section{padding:3.5rem 1.25rem;max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:2rem}
+.section-tag{color:#00d4aa;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem}
+.section-title{font-size:1.6rem;font-weight:900;letter-spacing:-0.02em;margin-bottom:0.75rem;line-height:1.2}
+.section-desc{color:#8a8a9e;font-size:0.95rem;line-height:1.6}
+.about-grid{display:flex;flex-direction:column;gap:2rem}
+.about-text{color:#8a8a9e;font-size:0.95rem;line-height:1.75}
+.about-text p{margin-bottom:1rem}
+.about-highlights{display:flex;flex-direction:column;gap:0.75rem}
+.highlight-item{display:flex;align-items:flex-start;gap:0.875rem;background:#12121a;border:1px solid #2a2a3a;border-radius:12px;padding:1rem;transition:all 0.3s}
+.highlight-item:hover{border-color:#3a3a4e;transform:translateY(-2px)}
+.highlight-icon{width:36px;height:36px;background:rgba(0,212,170,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:#00d4aa;font-weight:700}
+.highlight-content h4{font-size:0.9rem;font-weight:700;margin-bottom:0.15rem;color:#e8e8f0}
+.highlight-content p{font-size:0.8rem;color:#8a8a9e;line-height:1.5}
+.projects-grid{display:flex;flex-direction:column;gap:1rem}
+.project-card{background:#12121a;border:1px solid #2a2a3a;border-radius:14px;padding:1.5rem;transition:all 0.3s}
+.project-card:hover{transform:translateY(-4px);border-color:#3a3a4e;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;gap:0.5rem}
+.project-title{font-size:1rem;font-weight:800;line-height:1.3;color:#e8e8f0;flex:1}
+.project-link{color:#00d4aa;text-decoration:none;font-size:0.8rem;font-weight:700;white-space:nowrap;padding-top:0.2rem;transition:all 0.2s}
+.project-link:hover{opacity:0.8}
+.project-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.75rem}
+.tag{background:#1a1a25;color:#8a8a9e;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.7rem;font-weight:700;border:1px solid #2a2a3a}
+.tag.accent{background:rgba(0,212,170,0.15);color:#00d4aa;border-color:rgba(0,212,170,0.3)}
+.project-outcome{background:linear-gradient(135deg,rgba(0,212,170,0.15),transparent);border-left:3px solid #00d4aa;padding:0.6rem 0.875rem;border-radius:0 8px 8px 0;margin-bottom:0.75rem;font-weight:700;font-size:0.85rem;color:#e8e8f0}
+.project-desc{color:#8a8a9e;font-size:0.85rem;line-height:1.65}
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#00d4aa,transparent)}
+.timeline-item{position:relative;padding-bottom:2.5rem}
+.timeline-item::before{content:'';position:absolute;left:-1.5rem;top:0.4rem;width:10px;height:10px;background:#0a0a0f;border:2px solid #00d4aa;border-radius:50%;transform:translateX(-4px)}
+.timeline-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.4rem;flex-wrap:wrap;gap:0.25rem}
+.timeline-role{font-size:0.95rem;font-weight:800;color:#e8e8f0;line-height:1.3}
+.timeline-date{color:#5a5a6e;font-size:0.75rem;font-weight:600}
+.timeline-company{color:#00d4aa;font-weight:700;font-size:0.85rem;margin-bottom:0.5rem}
+.timeline-impact{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem}
+.impact-badge{background:#1a1a25;border:1px solid #2a2a3a;padding:0.35rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:700;color:#e8e8f0}
+.timeline-desc{color:#8a8a9e;font-size:0.85rem;line-height:1.65}
+.skills-grid{display:flex;flex-direction:column;gap:1rem}
+.skill-category{background:#12121a;border:1px solid #2a2a3a;border-radius:14px;padding:1.25rem;transition:all 0.3s}
+.skill-category:hover{border-color:#3a3a4e;transform:translateY(-2px)}
+.skill-header{display:flex;align-items:center;gap:0.625rem;margin-bottom:1rem}
+.skill-icon{width:32px;height:32px;background:rgba(0,212,170,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:#00d4aa;font-weight:700}
+.skill-title{font-weight:800;font-size:0.95rem;color:#e8e8f0}
+.skill-list{display:flex;flex-wrap:wrap;gap:0.4rem}
+.skill-item{background:#1a1a25;border:1px solid #2a2a3a;padding:0.4rem 0.75rem;border-radius:8px;font-size:0.8rem;color:#8a8a9e;font-weight:600;transition:all 0.2s}
+.skill-item:hover{background:rgba(0,212,170,0.15);color:#00d4aa;border-color:rgba(0,212,170,0.3)}
+.contact-section{background:#12121a;border-top:1px solid #2a2a3a;padding:3rem 1.25rem;text-align:center}
+.contact-inner{max-width:600px;margin:0 auto}
+.contact-title{font-size:1.6rem;font-weight:900;letter-spacing:-0.02em;margin-bottom:0.75rem}
+.contact-desc{color:#8a8a9e;font-size:0.95rem;line-height:1.6;margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column;gap:0.75rem}
+.contact-link{display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.5rem;border-radius:10px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid #3a3a4e;color:#e8e8f0;transition:border-color 0.2s,color 0.2s;min-height:48px}
+.contact-link:hover{border-color:#00d4aa;color:#00d4aa}
+.contact-link.primary{background:#00d4aa;color:#0a0a0f;border-color:#00d4aa}
+.contact-link.primary:hover{opacity:0.85;color:#0a0a0f}
+footer{padding:1.5rem 1.25rem;text-align:center;border-top:1px solid #1a1a25;color:#3a3a4e;font-size:0.75rem}
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.6s ease-out}
+.reveal.active{opacity:1;transform:translateY(0)}
+@media(min-width:768px){
+.hero{padding:8rem 2rem 4rem}
+.hero h1{font-size:3.5rem}
+.hero-subtitle{font-size:1.25rem;max-width:600px}
+.hero-cta{flex-direction:row;width:auto}
+.btn{width:auto}
+.metrics{grid-template-columns:repeat(4,1fr);gap:1rem}
+.metric-value{font-size:2.2rem}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.contact-links{flex-direction:row;justify-content:center}
+.contact-link{width:auto}
+section{padding:5rem 2rem}
+.about-grid{flex-direction:row;gap:3rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-name">C.<span>Aliyuda</span></div>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Work</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="hero-label">Open to opportunities</div>
+<h1>Pricing &amp; Commercial Analytics<br><span class="highlight">that moves the number.</span></h1>
+<p class="hero-subtitle">I build the models and frameworks that pricing and trading teams use to set prices, evaluate promotions, and protect margin. 10+ years turning messy datasets into measurable revenue and margin growth.</p>
+<div class="hero-cta">
+<a href="#projects" class="btn btn-primary">See my work</a>
+<a href="#contact" class="btn btn-ghost">Get in touch</a>
+</div>
+<div class="metrics">
+<div class="metric-card reveal"><div class="metric-value">&#163;1.4m+</div><div class="metric-label">Margin Recovered</div><div class="metric-context">Sainsbury's, &#163;800m FMCG</div></div>
+<div class="metric-card reveal"><div class="metric-value">+4.2%</div><div class="metric-label">Margin Uplift</div><div class="metric-context">HF Holidays, &#163;120m</div></div>
+<div class="metric-card reveal"><div class="metric-value">+6%</div><div class="metric-label">Revenue Growth</div><div class="metric-context">HF Holidays, YoY</div></div>
+<div class="metric-card reveal"><div class="metric-value">10+</div><div class="metric-label">Years</div><div class="metric-context">Pricing &amp; Analytics</div></div>
+</div>
+</section>
+
+<section id="about">
+<div class="section-header reveal">
+<div class="section-tag">About</div>
+<h2 class="section-title">Commercial analyst.<br>Problem-first thinker.</h2>
+<p class="section-desc">I specialise in pricing strategy, revenue analytics, and the kind of commercial intelligence that gives leadership teams confidence in their decisions.</p>
+</div>
+<div class="about-grid">
+<div class="about-text reveal">
+<p>I started in healthcare analytics, building predictive models for CDC/PEPFAR programmes that stratified patient risk across 50+ clinical sites. That work earned a CDC Atlanta Certificate of Commendation and contributed to peer-reviewed research.</p>
+<p>Today I apply the same rigorous, outcome-focused approach to commercial analytics. At Sainsbury's and HF Holidays, I translate complex pricing data into decisions that protect margin and drive revenue.</p>
+</div>
+<div class="about-highlights reveal">
+<div class="highlight-item"><div class="highlight-icon">C</div><div class="highlight-content"><h4>CDC Commendation</h4><p>Recognised by CDC Atlanta for predictive modelling across 50+ sites</p></div></div>
+<div class="highlight-item"><div class="highlight-icon">P</div><div class="highlight-content"><h4>Peer-Reviewed Publication</h4><p>International Journal of Scientific Research and Management</p></div></div>
+<div class="highlight-item"><div class="highlight-icon">M</div><div class="highlight-content"><h4>MIT Data Science Certificate</h4><p>Massachusetts Institute of Technology</p></div></div>
+<div class="highlight-item"><div class="highlight-icon">D</div><div class="highlight-content"><h4>MSc Distinction</h4><p>Analytics &amp; Business Intelligence, University of Law</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="section-header reveal">
+<div class="section-tag">Selected Work</div>
+<h2 class="section-title">Projects with measurable outcomes.</h2>
+<p class="section-desc">A selection of analytical work spanning pricing, commercial intelligence, and predictive modelling.</p>
+</div>
+<div class="projects-grid">
+<div class="project-card reveal">
+<div class="project-header"><h3 class="project-title">Retail Pricing Analysis</h3><a href="https://github.com/chrisaliyuda/Retail-Pricing-Analysis" target="_blank" class="project-link">GitHub &rarr;</a></div>
+<div class="project-tags"><span class="tag accent">Python</span><span class="tag">Pandas</span><span class="tag">Price Elasticity</span><span class="tag">Margin Analysis</span></div>
+<div class="project-outcome">Price elasticity, promotional effectiveness, revenue optimisation</div>
+<p class="project-desc">Pricing and margin analysis across a retail dataset. Explored price elasticity curves, measured promotional effectiveness, and identified revenue optimisation opportunities through scenario modelling.</p>
+</div>
+<div class="project-card reveal">
+<div class="project-header"><h3 class="project-title">eCommerce Sales &amp; Customer Behaviour</h3><a href="https://github.com/chrisaliyuda/eCommerce-Sales-Analysis-and-Customer-Behaviour" target="_blank" class="project-link">GitHub &rarr;</a></div>
+<div class="project-tags"><span class="tag accent">Python</span><span class="tag">Power BI</span><span class="tag">Segmentation</span><span class="tag">RFM Analysis</span></div>
+<div class="project-outcome">1,192% revenue growth identified between 2010-2011</div>
+<p class="project-desc">Segmentation and transaction analysis across an online retail dataset. Explored purchase patterns, customer value distribution, seasonal trends, and revenue drivers. Built Power BI dashboard for commercial storytelling.</p>
+</div>
+<div class="project-card reveal">
+<div class="project-header"><h3 class="project-title">Customer Churn &amp; Retention Modelling</h3><a href="https://github.com/chrisaliyuda/Customer-Churn-Retention-Modelling" target="_blank" class="project-link">GitHub &rarr;</a></div>
+<div class="project-tags"><span class="tag accent">Python</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">GridSearchCV</span></div>
+<div class="project-outcome">83% accuracy on test set</div>
+<p class="project-desc">Classification model exploring behavioural and demographic signals that predict attrition. Compared Random Forest, XGBoost, and LightGBM with hyperparameter tuning. Risk-tiering logic directly applicable to commercial retention strategy.</p>
+</div>
+<div class="project-card reveal">
+<div class="project-header"><h3 class="project-title">CRM Sales Performance Dashboard</h3><a href="https://github.com/chrisaliyuda/CRM-Sales-Performance-Dashboard" target="_blank" class="project-link">GitHub &rarr;</a></div>
+<div class="project-tags"><span class="tag accent">Power BI</span><span class="tag">DAX</span><span class="tag">KPI Tracking</span><span class="tag">Commercial Reporting</span></div>
+<div class="project-outcome">Quarterly performance tracking for commercial leadership</div>
+<p class="project-desc">Translated CRM data into clear operational insight for commercial leadership. Built quarterly performance tracking with pipeline analysis, conversion rates, and revenue forecasting visualisations.</p>
+</div>
+<div class="project-card reveal">
+<div class="project-header"><h3 class="project-title">Predicting Patient Adherence to ART</h3><a href="https://github.com/chrisaliyuda/Predicting-Patient-Adherence-to-ART" target="_blank" class="project-link">GitHub &rarr;</a></div>
+<div class="project-tags"><span class="tag accent">Python</span><span class="tag">Predictive Modelling</span><span class="tag">CDC/PEPFAR</span><span class="tag">Risk Stratification</span></div>
+<div class="project-outcome">Adopted as standard across 50+ programme sites</div>
+<p class="project-desc">Predictive model identifying patients at risk of missing antiretroviral therapy appointments. Stratified patients into risk tiers for proactive clinical intervention. Framework became programme standard and earned CDC Atlanta commendation.</p>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="section-header reveal">
+<div class="section-tag">Experience</div>
+<h2 class="section-title">Where I've worked.</h2>
+</div>
+<div class="timeline">
+<div class="timeline-item reveal">
+<div class="timeline-header"><div class="timeline-role">Senior Commercial Analyst, Pricing &amp; Trading</div><div class="timeline-date">2023 - Present</div></div>
+<div class="timeline-company">HF Holidays</div>
+<div class="timeline-impact"><span class="impact-badge">&#163;120m+ portfolio</span><span class="impact-badge">+4.2% margin</span><span class="impact-badge">+6% revenue</span></div>
+<p class="timeline-desc">Built pricing models and commercial frameworks for trading teams. Led margin recovery and promotional ROI analysis across the full product range.</p>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-header"><div class="timeline-role">Senior Commercial &amp; Range Strategy Analyst</div><div class="timeline-date">2022 - 2023</div></div>
+<div class="timeline-company">Sainsbury's</div>
+<div class="timeline-impact"><span class="impact-badge">&#163;800m+ categories</span><span class="impact-badge">&#163;1.4m recovered</span><span class="impact-badge">SQL / Snowflake</span></div>
+<p class="timeline-desc">Delivered pricing and range strategy analytics for major FMCG categories. Built datasets identifying margin leakage and informed trading decisions.</p>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-header"><div class="timeline-role">Senior Strategy &amp; Performance Analyst</div><div class="timeline-date">2013 - 2021</div></div>
+<div class="timeline-company">MGIC / Catholic Caritas Nigeria</div>
+<div class="timeline-impact"><span class="impact-badge">50+ sites</span><span class="impact-badge">CDC/PEPFAR</span><span class="impact-badge">27 analysts</span></div>
+<p class="timeline-desc">Led analytics for Nigeria's largest PEPFAR programme. Built predictive models for patient adherence, managed a team of 27 analysts, and established reporting frameworks adopted programme-wide.</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="section-header reveal">
+<div class="section-tag">Skills</div>
+<h2 class="section-title">Tools and capabilities.</h2>
+</div>
+<div class="skills-grid">
+<div class="skill-category reveal">
+<div class="skill-header"><div class="skill-icon">&#163;</div><div class="skill-title">Pricing &amp; Commercial</div></div>
+<div class="skill-list"><span class="skill-item">Elasticity Modelling</span><span class="skill-item">Scenario Analysis</span><span class="skill-item">Margin Recovery</span><span class="skill-item">Promotional ROI</span><span class="skill-item">Demand Forecasting</span><span class="skill-item">Fee Structure Analysis</span></div>
+</div>
+<div class="skill-category reveal">
+<div class="skill-header"><div class="skill-icon">#</div><div class="skill-title">Analytics &amp; Modelling</div></div>
+<div class="skill-list"><span class="skill-item">SQL</span><span class="skill-item">Snowflake</span><span class="skill-item">Python / Pandas</span><span class="skill-item">Scikit-Learn</span><span class="skill-item">XGBoost</span><span class="skill-item">LightGBM</span><span class="skill-item">Excel / VBA</span></div>
+</div>
+<div class="skill-category reveal">
+<div class="skill-header"><div class="skill-icon">@</div><div class="skill-title">Visualisation</div></div>
+<div class="skill-list"><span class="skill-item">Power BI</span><span class="skill-item">Tableau</span><span class="skill-item">Dashboard Design</span><span class="skill-item">Self-Service Reporting</span><span class="skill-item">DAX</span></div>
+</div>
+<div class="skill-category reveal">
+<div class="skill-header"><div class="skill-icon">&amp;</div><div class="skill-title">Stakeholder Communication</div></div>
+<div class="skill-list"><span class="skill-item">Executive Presentations</span><span class="skill-item">Commercial Recommendations</span><span class="skill-item">Cross-Functional Leadership</span><span class="skill-item">Team Management (27 analysts)</span></div>
+</div>
+</div>
+</section>
+
+<section class="contact-section" id="contact">
+<div class="contact-inner reveal">
+<div class="section-tag" style="margin-bottom:0.5rem">Contact</div>
+<h2 class="contact-title">Let's talk.</h2>
+<p class="contact-desc">I'm actively looking for senior commercial analyst and pricing roles. If you've got something worth discussing, I'm straightforward to reach.</p>
+<div class="contact-links">
+<a href="mailto:chrisaliyuda@gmail.com" class="contact-link primary">Email me</a>
+<a href="tel:+447459238415" class="contact-link">Call</a>
+<a href="https://github.com/chrisaliyuda" target="_blank" class="contact-link">GitHub</a>
+<a href="https://linkedin.com/in/chrisaliyuda" target="_blank" class="contact-link">LinkedIn</a>
+</div>
+</div>
+</section>
+
+<footer>Christian Aliyuda &middot; 2026 &middot; Pricing &amp; Commercial Analytics</footer>
+
+<script>
+const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('active')}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor){anchor.addEventListener('click',function(e){e.preventDefault();var target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+</script>
+
+</body>
+</html>
